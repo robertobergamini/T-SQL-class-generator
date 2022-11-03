@@ -7,7 +7,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 -- =============================================
--- Author		: Broc
+-- Author	: Broc
 -- Create date	: 30/10/2022
 -- Description	: Convert sql data type to C# data type
 -- =============================================
