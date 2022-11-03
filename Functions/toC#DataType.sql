@@ -1,5 +1,4 @@
-USE [ITALPIZZA_EXT]
-GO
+
 
 /****** Object:  UserDefinedFunction [dbo].[toC#DataType]    Script Date: 03/11/2022 09:18:21 ******/
 SET ANSI_NULLS ON
@@ -25,34 +24,34 @@ BEGIN
 	declare @rettype varchar(50)
 
 	set @rettype = case @sqlType 
-            when 'bigint' then 'long'
-            when 'binary' then 'byte[]'
-            when 'bit' then 'bool'
-            when 'char' then 'string'
-            when 'date' then 'DateTime'
-            when 'datetime' then 'DateTime'
-            when 'datetime2' then 'DateTime'
-            when 'datetimeoffset' then 'DateTimeOffset'
-            when 'decimal' then 'decimal'
-            when 'float' then 'double'
-            when 'image' then 'byte[]'
-            when 'int' then 'int'
-            when 'money' then 'decimal'
-            when 'nchar' then 'string'
-            when 'ntext' then 'string'
-            when 'numeric' then 'decimal'
-            when 'nvarchar' then 'string'
-            when 'real' then 'float'
-            when 'smalldatetime' then 'DateTime'
-            when 'smallint' then 'short'
-            when 'smallmoney' then 'decimal'
-            when 'text' then 'string'
-            when 'time' then 'TimeSpan'
-            when 'timestamp' then 'long'
-            when 'tinyint' then 'byte'
+            when 'bigint'			then 'long'
+            when 'binary'			then 'byte[]'
+            when 'bit'				then 'bool'
+            when 'char'				then 'string'
+            when 'date'				then 'DateTime'
+            when 'datetime'			then 'DateTime'
+            when 'datetime2'		then 'DateTime'
+            when 'datetimeoffset'	then 'DateTimeOffset'
+            when 'decimal'			then 'decimal'
+            when 'float'			then 'double'
+            when 'image'			then 'byte[]'
+            when 'int'				then 'int'
+            when 'money'			then 'decimal'
+            when 'nchar'			then 'string'
+            when 'ntext'			then 'string'
+            when 'numeric'			then 'decimal'
+            when 'nvarchar'			then 'string'
+            when 'real'				then 'float'
+            when 'smalldatetime'	then 'DateTime'
+            when 'smallint'			then 'short'
+            when 'smallmoney'		then 'decimal'
+            when 'text'				then 'string'
+            when 'time'				then 'TimeSpan'
+            when 'timestamp'		then 'long'
+            when 'tinyint'			then 'byte'
             when 'uniqueidentifier' then 'Guid'
-            when 'varbinary' then 'byte[]'
-            when 'varchar' then 'string'
+            when 'varbinary'		then 'byte[]'
+            when 'varchar'			then 'string'
             else 'UNKNOWN_' + @sqlType end
 
 	if @isNullable = 1 and @sqlType in ('bigint', 'bit', 'date', 'datetime', 'datetime2', 'datetimeoffset', 'decimal', 'float', 'int', 'money', 'numeric', 'real', 'smalldatetime', 'smallint', 'smallmoney', 'time', 'tinyint', 'uniqueidentifier')
